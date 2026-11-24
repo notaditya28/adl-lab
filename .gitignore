@@ -7,7 +7,7 @@ __pycache__/
 data/
 
 # large / in-progress training outputs
-results/
+results/preds/
 results_*/preds/
 *.npz
 *.npy

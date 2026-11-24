@@ -1,0 +1,425 @@
+### A. Single-modality baselines (ResNet)
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9662 | trial acc 1.0000 | epochs 33 | 28s
+  fold 1: window acc 0.9318 | trial acc 0.9444 | epochs 40 | 60s
+  fold 2: window acc 0.8862 | trial acc 0.8788 | epochs 34 | 88s
+  fold 3: window acc 0.9916 | trial acc 1.0000 | epochs 23 | 108s
+  fold 4: window acc 0.8171 | trial acc 0.8182 | epochs 36 | 136s
+{"name": "A_IMU_resnet", "mods": ["IMU"], "encoder": "resnet", "opt": "adamw", "pretrain": "none", "win": 4.0, "params": 624643, "window_acc": 0.9183951393253719, "window_acc_fold_std": 0.06182466514729093, "window_f1": 0.918233556721472, "trial_acc": 0.9281437125748503, "trial_acc_fold_std": 0.07088001936504577, "trial_f1": 0.9279187340740677, "minutes": 2.2628486792246503}
+173 trials, 59 subjects, mods=['FP'], channels={'FP': 16}
+  fold 0: window acc 0.9425 | trial acc 0.9444 | epochs 24 | 22s
+  fold 1: window acc 0.9321 | trial acc 0.8889 | epochs 26 | 42s
+  fold 2: window acc 0.9311 | trial acc 0.9394 | epochs 23 | 78s
+  fold 3: window acc 0.9413 | trial acc 0.9429 | epochs 33 | 105s
+  fold 4: window acc 0.9819 | trial acc 1.0000 | epochs 39 | 158s
+{"name": "A_FP_resnet", "mods": ["FP"], "encoder": "resnet", "opt": "adamw", "pretrain": "none", "win": 4.0, "params": 540419, "window_acc": 0.9454397394136808, "window_acc_fold_std": 0.018645397554410546, "window_f1": 0.9452753762771096, "trial_acc": 0.9421965317919075, "trial_acc_fold_std": 0.03519106289493083, "trial_f1": 0.9419169392407571, "minutes": 2.626593311627706}
+169 trials, 58 subjects, mods=['EMG'], channels={'EMG': 12}
+  fold 0: window acc 0.5884 | trial acc 0.5833 | epochs 19 | 17s
+  fold 1: window acc 0.6776 | trial acc 0.7059 | epochs 21 | 36s
+  fold 2: window acc 0.7564 | trial acc 0.7941 | epochs 29 | 54s
+  fold 3: window acc 0.7248 | trial acc 0.7500 | epochs 26 | 71s
+  fold 4: window acc 0.6665 | trial acc 0.6970 | epochs 16 | 83s
+{"name": "A_EMG_resnet", "mods": ["EMG"], "encoder": "resnet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 538627, "window_acc": 0.6812104881334853, "window_acc_fold_std": 0.057253036990057724, "window_f1": 0.6808691493715898, "trial_acc": 0.7041420118343196, "trial_acc_fold_std": 0.07046896151139326, "trial_f1": 0.702485576779362, "minutes": 1.3884206056594848}
+176 trials, 59 subjects, mods=['EEG'], channels={'EEG': 18}
+  fold 0: window acc 0.5233 | trial acc 0.5278 | epochs 34 | 30s
+  fold 1: window acc 0.5188 | trial acc 0.5278 | epochs 17 | 44s
+  fold 2: window acc 0.5094 | trial acc 0.4722 | epochs 25 | 66s
+  fold 3: window acc 0.5020 | trial acc 0.4857 | epochs 32 | 94s
+  fold 4: window acc 0.5525 | trial acc 0.5758 | epochs 21 | 115s
+{"name": "A_EEG_resnet", "mods": ["EEG"], "encoder": "resnet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 541315, "window_acc": 0.520799512987013, "window_acc_fold_std": 0.017290096848932304, "window_f1": 0.50515772429599, "trial_acc": 0.5170454545454546, "trial_acc_fold_std": 0.03651029200347366, "trial_f1": 0.4923875781407541, "minutes": 1.9139506578445435}
+### B. Architecture comparison on IMU+FP+EMG fusion
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.8776 | trial acc 0.9688 | epochs 12 | 16s
+  fold 1: window acc 0.8550 | trial acc 0.8788 | epochs 20 | 36s
+  fold 2: window acc 0.8682 | trial acc 0.9032 | epochs 15 | 53s
+  fold 3: window acc 0.5986 | trial acc 0.5938 | epochs 17 | 73s
+  fold 4: window acc 0.9077 | trial acc 0.9355 | epochs 40 | 111s
+{"name": "B_mlp", "mods": ["IMU", "FP", "EMG"], "encoder": "mlp", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 4713987, "window_acc": 0.8206888913500942, "window_acc_fold_std": 0.11276535670043847, "window_f1": 0.8192154782509721, "trial_acc": 0.8553459119496856, "trial_acc_fold_std": 0.1345770225242619, "trial_f1": 0.8540813107088558, "minutes": 1.8558565815289816}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.8212 | trial acc 0.8125 | epochs 35 | 36s
+  fold 1: window acc 0.8625 | trial acc 0.8788 | epochs 32 | 67s
+  fold 2: window acc 0.8165 | trial acc 0.8387 | epochs 20 | 86s
+  fold 3: window acc 0.6222 | trial acc 0.6250 | epochs 18 | 103s
+  fold 4: window acc 0.7599 | trial acc 0.7742 | epochs 11 | 116s
+{"name": "B_mlp_wn", "mods": ["IMU", "FP", "EMG"], "encoder": "mlp_wn", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 4711683, "window_acc": 0.7767194595193266, "window_acc_fold_std": 0.08375145915986307, "window_f1": 0.7704287828815656, "trial_acc": 0.7861635220125787, "trial_acc_fold_std": 0.08735034285100304, "trial_f1": 0.7820294784580498, "minutes": 1.9379073858261109}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9989 | trial acc 1.0000 | epochs 18 | 37s
+  fold 1: window acc 0.9995 | trial acc 1.0000 | epochs 23 | 81s
+  fold 2: window acc 0.9636 | trial acc 0.9677 | epochs 14 | 109s
+  fold 3: window acc 0.9006 | trial acc 0.9375 | epochs 15 | 137s
+  fold 4: window acc 0.9615 | trial acc 0.9677 | epochs 19 | 171s
+{"name": "B_vgg", "mods": ["IMU", "FP", "EMG"], "encoder": "vgg", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2888195, "window_acc": 0.9650016613135453, "window_acc_fold_std": 0.03604856631797908, "window_f1": 0.9648513171249405, "trial_acc": 0.9748427672955975, "trial_acc_fold_std": 0.023498068200537844, "trial_f1": 0.9748382877313695, "minutes": 2.844503903388977}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 1.0000 | trial acc 1.0000 | epochs 20 | 51s
+  fold 1: window acc 0.9195 | trial acc 0.9394 | epochs 19 | 97s
+  fold 2: window acc 0.9642 | trial acc 0.9677 | epochs 18 | 139s
+  fold 3: window acc 0.9352 | trial acc 0.9375 | epochs 17 | 184s
+  fold 4: window acc 0.9349 | trial acc 0.9355 | epochs 30 | 254s
+{"name": "B_inception", "mods": ["IMU", "FP", "EMG"], "encoder": "inception", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 912027, "window_acc": 0.9504928563517554, "window_acc_fold_std": 0.028552271429521478, "window_f1": 0.9507389336611135, "trial_acc": 0.9559748427672956, "trial_acc_fold_std": 0.024951124144672536, "trial_f1": 0.9563666788273514, "minutes": 4.226826214790345}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9978 | trial acc 1.0000 | epochs 27 | 78s
+  fold 1: window acc 0.9941 | trial acc 1.0000 | epochs 28 | 151s
+  fold 2: window acc 0.9358 | trial acc 0.9355 | epochs 17 | 192s
+  fold 3: window acc 0.9308 | trial acc 0.9375 | epochs 16 | 231s
+  fold 4: window acc 0.9938 | trial acc 1.0000 | epochs 31 | 319s
+{"name": "B_resnet", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2065923, "window_acc": 0.9706501273673718, "window_acc_fold_std": 0.03041257708125704, "window_f1": 0.9705720245774181, "trial_acc": 0.9748427672955975, "trial_acc_fold_std": 0.031119002228346366, "trial_f1": 0.9747726282372261, "minutes": 5.314116338888804}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9994 | trial acc 1.0000 | epochs 24 | 67s
+  fold 1: window acc 0.9931 | trial acc 1.0000 | epochs 27 | 136s
+  fold 2: window acc 0.9676 | trial acc 0.9677 | epochs 36 | 238s
+  fold 3: window acc 0.9423 | trial acc 0.9688 | epochs 20 | 294s
+  fold 4: window acc 0.9977 | trial acc 1.0000 | epochs 30 | 374s
+{"name": "B_resnet_dilated", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2016003, "window_acc": 0.9800642374570827, "window_acc_fold_std": 0.022069250009255487, "window_f1": 0.9799706497960002, "trial_acc": 0.9874213836477987, "trial_acc_fold_std": 0.015559501114173167, "trial_f1": 0.9874163418936717, "minutes": 6.228210624059042}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9994 | trial acc 1.0000 | epochs 37 | 141s
+  fold 1: window acc 0.9701 | trial acc 1.0000 | epochs 19 | 211s
+  fold 2: window acc 0.9381 | trial acc 0.9355 | epochs 15 | 270s
+  fold 3: window acc 0.9561 | trial acc 0.9688 | epochs 21 | 352s
+  fold 4: window acc 0.9026 | trial acc 0.9032 | epochs 25 | 447s
+{"name": "B_densenet", "mods": ["IMU", "FP", "EMG"], "encoder": "densenet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 1845987, "window_acc": 0.9537047292058921, "window_acc_fold_std": 0.03232042836431193, "window_f1": 0.9537635136135355, "trial_acc": 0.9622641509433962, "trial_acc_fold_std": 0.037655763910338834, "trial_f1": 0.9622573687994249, "minutes": 7.442335804303487}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9701 | trial acc 0.9688 | epochs 27 | 55s
+  fold 1: window acc 0.9579 | trial acc 0.9697 | epochs 19 | 94s
+  fold 2: window acc 0.9364 | trial acc 0.9677 | epochs 15 | 127s
+  fold 3: window acc 0.9731 | trial acc 1.0000 | epochs 23 | 173s
+  fold 4: window acc 0.9530 | trial acc 0.9677 | epochs 25 | 224s
+{"name": "B_mobilenet", "mods": ["IMU", "FP", "EMG"], "encoder": "mobilenet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 1328099, "window_acc": 0.9582456528962233, "window_acc_fold_std": 0.013170080894050348, "window_f1": 0.9582085013479191, "trial_acc": 0.9748427672955975, "trial_acc_fold_std": 0.012627866099215596, "trial_f1": 0.9746952269131093, "minutes": 3.730081232388814}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9651 | trial acc 0.9688 | epochs 24 | 89s
+  fold 1: window acc 0.9648 | trial acc 1.0000 | epochs 15 | 147s
+  fold 2: window acc 0.9955 | trial acc 1.0000 | epochs 23 | 229s
+  fold 3: window acc 0.9489 | trial acc 1.0000 | epochs 15 | 282s
+  fold 4: window acc 0.9519 | trial acc 0.9677 | epochs 26 | 386s
+{"name": "B_efficientnet", "mods": ["IMU", "FP", "EMG"], "encoder": "efficientnet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 1545599, "window_acc": 0.9651124155498948, "window_acc_fold_std": 0.016479978912467826, "window_f1": 0.9647178500251291, "trial_acc": 0.9874213836477987, "trial_acc_fold_std": 0.015559501114173167, "trial_f1": 0.9874163418936717, "minutes": 6.437530934810638}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.8666 | trial acc 0.8750 | epochs 20 | 54s
+  fold 1: window acc 0.9648 | trial acc 0.9697 | epochs 30 | 122s
+  fold 2: window acc 0.9159 | trial acc 0.9355 | epochs 17 | 193s
+  fold 3: window acc 0.8885 | trial acc 0.8750 | epochs 26 | 419s
+  fold 4: window acc 0.9139 | trial acc 0.9032 | epochs 22 | 609s
+{"name": "B_convnext", "mods": ["IMU", "FP", "EMG"], "encoder": "convnext", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 3537411, "window_acc": 0.9102890685568723, "window_acc_fold_std": 0.03287583220914847, "window_f1": 0.9102592694380486, "trial_acc": 0.9119496855345912, "trial_acc_fold_std": 0.03659210632249739, "trial_f1": 0.9113883568012008, "minutes": 10.154042768478394}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.7021 | trial acc 0.7188 | epochs 11 | 57s
+  fold 1: window acc 0.5240 | trial acc 0.5152 | epochs 12 | 113s
+  fold 2: window acc 0.6000 | trial acc 0.6129 | epochs 11 | 166s
+  fold 3: window acc 0.5826 | trial acc 0.6250 | epochs 11 | 218s
+  fold 4: window acc 0.7814 | trial acc 0.7742 | epochs 11 | 271s
+{"name": "B_rnn", "mods": ["IMU", "FP", "EMG"], "encoder": "rnn", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 902435, "window_acc": 0.636615350537158, "window_acc_fold_std": 0.0918558695458788, "window_f1": 0.6267274851566732, "trial_acc": 0.6477987421383647, "trial_acc_fold_std": 0.08981389841761034, "trial_f1": 0.6377933874014502, "minutes": 4.515934216976166}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9241 | trial acc 0.9062 | epochs 28 | 140s
+  fold 1: window acc 0.9861 | trial acc 1.0000 | epochs 14 | 208s
+  fold 2: window acc 0.9318 | trial acc 0.9355 | epochs 21 | 313s
+  fold 3: window acc 0.9544 | trial acc 0.9688 | epochs 18 | 402s
+  fold 4: window acc 0.9836 | trial acc 1.0000 | epochs 30 | 550s
+{"name": "B_gru", "mods": ["IMU", "FP", "EMG"], "encoder": "gru", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 1460003, "window_acc": 0.9562520766419316, "window_acc_fold_std": 0.02557830831380715, "window_f1": 0.9561616521477724, "trial_acc": 0.9622641509433962, "trial_acc_fold_std": 0.03672787299213685, "trial_f1": 0.9624749156380678, "minutes": 9.162129318714141}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9192 | trial acc 0.9375 | epochs 25 | 135s
+  fold 1: window acc 0.9936 | trial acc 1.0000 | epochs 23 | 250s
+  fold 2: window acc 0.9148 | trial acc 0.9355 | epochs 21 | 358s
+  fold 3: window acc 0.8984 | trial acc 0.9062 | epochs 19 | 456s
+  fold 4: window acc 0.8811 | trial acc 0.9032 | epochs 17 | 544s
+{"name": "B_lstm", "mods": ["IMU", "FP", "EMG"], "encoder": "lstm", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 1738787, "window_acc": 0.9221397718462732, "window_acc_fold_std": 0.038512481836800644, "window_f1": 0.9217730144310744, "trial_acc": 0.9371069182389937, "trial_acc_fold_std": 0.0348037832694195, "trial_f1": 0.9367851821980263, "minutes": 9.074902578194935}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.8616 | trial acc 0.8750 | epochs 21 | 95s
+  fold 1: window acc 0.9856 | trial acc 1.0000 | epochs 20 | 178s
+  fold 2: window acc 0.9625 | trial acc 0.9677 | epochs 26 | 291s
+  fold 3: window acc 0.8226 | trial acc 0.8438 | epochs 16 | 362s
+  fold 4: window acc 0.9564 | trial acc 0.9677 | epochs 28 | 485s
+{"name": "B_lstm_uni", "mods": ["IMU", "FP", "EMG"], "encoder": "lstm_uni", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 949667, "window_acc": 0.9177096023922915, "window_acc_fold_std": 0.06372696423023858, "window_f1": 0.9173815653378519, "trial_acc": 0.9308176100628931, "trial_acc_fold_std": 0.060347965591995, "trial_f1": 0.9305580759709201, "minutes": 8.078326710065205}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9413 | trial acc 0.9688 | epochs 21 | 189s
+  fold 1: window acc 0.9072 | trial acc 0.9394 | epochs 23 | 299s
+  fold 2: window acc 0.9437 | trial acc 0.9677 | epochs 26 | 387s
+  fold 3: window acc 0.9368 | trial acc 0.9688 | epochs 25 | 442s
+  fold 4: window acc 0.9558 | trial acc 0.9677 | epochs 25 | 567s
+{"name": "B_transformer", "mods": ["IMU", "FP", "EMG"], "encoder": "transformer", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2824195, "window_acc": 0.9366485768080629, "window_acc_fold_std": 0.016148602770375883, "window_f1": 0.9368172978614399, "trial_acc": 0.9622641509433962, "trial_acc_fold_std": 0.01154961320480935, "trial_f1": 0.9625428597905662, "minutes": 9.449491171042125}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9895 | trial acc 1.0000 | epochs 40 | 103s
+  fold 1: window acc 0.9829 | trial acc 1.0000 | epochs 16 | 231s
+  fold 2: window acc 0.9648 | trial acc 0.9677 | epochs 23 | 381s
+  fold 3: window acc 0.9544 | trial acc 0.9688 | epochs 21 | 426s
+  fold 4: window acc 0.8947 | trial acc 0.9355 | epochs 16 | 464s
+{"name": "B_vit", "mods": ["IMU", "FP", "EMG"], "encoder": "vit", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 3045123, "window_acc": 0.9576918817144756, "window_acc_fold_std": 0.033701007375660695, "window_f1": 0.9573419747070343, "trial_acc": 0.9748427672955975, "trial_acc_fold_std": 0.02408915650200622, "trial_f1": 0.9745975736801425, "minutes": 7.737347765763601}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    BERT[IMU] pre-train loss 0.7276
+    BERT[FP] pre-train loss 0.3389
+    BERT[EMG] pre-train loss 0.4610
+  fold 0: window acc 0.9507 | trial acc 0.9375 | epochs 31 | 120s
+    BERT[IMU] pre-train loss 0.7125
+    BERT[FP] pre-train loss 0.3748
+    BERT[EMG] pre-train loss 0.4486
+  fold 1: window acc 0.9296 | trial acc 0.9394 | epochs 32 | 239s
+    BERT[IMU] pre-train loss 0.7238
+    BERT[FP] pre-train loss 0.3733
+    BERT[EMG] pre-train loss 0.4509
+  fold 2: window acc 0.9920 | trial acc 1.0000 | epochs 21 | 337s
+    BERT[IMU] pre-train loss 0.7271
+    BERT[FP] pre-train loss 0.2855
+    BERT[EMG] pre-train loss 0.4683
+  fold 3: window acc 0.9725 | trial acc 0.9688 | epochs 32 | 462s
+    BERT[IMU] pre-train loss 0.7368
+    BERT[FP] pre-train loss 0.3905
+    BERT[EMG] pre-train loss 0.4772
+  fold 4: window acc 0.9105 | trial acc 0.9032 | epochs 28 | 584s
+{"name": "B_bert", "mods": ["IMU", "FP", "EMG"], "encoder": "bert", "opt": "adamw", "pretrain": "bert", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 3284931, "window_acc": 0.9509358732971536, "window_acc_fold_std": 0.029130176746585988, "window_f1": 0.9513477525606687, "trial_acc": 0.949685534591195, "trial_acc_fold_std": 0.03258180691364639, "trial_f1": 0.950250470876281, "minutes": 9.735245760281881}
+### D. Optimizer study (IMU, ResNet, 25 epochs)
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.7989 | trial acc 0.7941 | epochs 25 | 27s
+  fold 1: window acc 0.8270 | trial acc 0.8056 | epochs 25 | 53s
+  fold 2: window acc 0.8208 | trial acc 0.8182 | epochs 25 | 78s
+  fold 3: window acc 0.9123 | trial acc 0.9032 | epochs 25 | 103s
+  fold 4: window acc 0.7804 | trial acc 0.7879 | epochs 25 | 132s
+{"name": "D_opt_sgd", "mods": ["IMU"], "encoder": "resnet", "opt": "sgd", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.8267337104546407, "window_acc_fold_std": 0.04530511746076949, "window_f1": 0.8263658260953944, "trial_acc": 0.8203592814371258, "trial_acc_fold_std": 0.04200975158512156, "trial_f1": 0.820370397325609, "minutes": 2.198574598630269}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.8536 | trial acc 0.8824 | epochs 25 | 29s
+  fold 1: window acc 0.8002 | trial acc 0.8056 | epochs 25 | 56s
+  fold 2: window acc 0.9261 | trial acc 0.9394 | epochs 25 | 80s
+  fold 3: window acc 0.9522 | trial acc 0.9677 | epochs 25 | 109s
+  fold 4: window acc 0.7842 | trial acc 0.7576 | epochs 25 | 134s
+{"name": "D_opt_momentum", "mods": ["IMU"], "encoder": "resnet", "opt": "momentum", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.8610936517913262, "window_acc_fold_std": 0.0666115920659153, "window_f1": 0.8611203037157251, "trial_acc": 0.8682634730538922, "trial_acc_fold_std": 0.07913598880595397, "trial_f1": 0.8684171746785178, "minutes": 2.2415127555529275}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.8639 | trial acc 0.8529 | epochs 25 | 29s
+  fold 1: window acc 0.7978 | trial acc 0.8056 | epochs 25 | 51s
+  fold 2: window acc 0.9373 | trial acc 0.9394 | epochs 25 | 78s
+  fold 3: window acc 0.9556 | trial acc 0.9677 | epochs 25 | 106s
+  fold 4: window acc 0.7932 | trial acc 0.7879 | epochs 25 | 134s
+{"name": "D_opt_nesterov", "mods": ["IMU"], "encoder": "resnet", "opt": "nesterov", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.8672742509951812, "window_acc_fold_std": 0.06782498854324165, "window_f1": 0.8673875361096917, "trial_acc": 0.8682634730538922, "trial_acc_fold_std": 0.07149058981194198, "trial_f1": 0.8684171746785178, "minutes": 2.228077228864034}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9115 | trial acc 0.9412 | epochs 25 | 28s
+  fold 1: window acc 0.9089 | trial acc 0.9167 | epochs 25 | 53s
+  fold 2: window acc 0.9256 | trial acc 0.9394 | epochs 25 | 81s
+  fold 3: window acc 0.9876 | trial acc 1.0000 | epochs 25 | 107s
+  fold 4: window acc 0.8666 | trial acc 0.8788 | epochs 25 | 134s
+{"name": "D_opt_adagrad", "mods": ["IMU"], "encoder": "resnet", "opt": "adagrad", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.9190236748376284, "window_acc_fold_std": 0.039132969271894934, "window_f1": 0.9197234671358935, "trial_acc": 0.9341317365269461, "trial_acc_fold_std": 0.03944149862232118, "trial_f1": 0.9346824751843036, "minutes": 2.2334327538808187}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.8874 | trial acc 0.8824 | epochs 25 | 26s
+  fold 1: window acc 0.7749 | trial acc 0.8056 | epochs 25 | 55s
+  fold 2: window acc 0.9272 | trial acc 0.9394 | epochs 25 | 81s
+  fold 3: window acc 0.9859 | trial acc 1.0000 | epochs 25 | 111s
+  fold 4: window acc 0.8134 | trial acc 0.8182 | epochs 25 | 136s
+{"name": "D_opt_rmsprop", "mods": ["IMU"], "encoder": "resnet", "opt": "rmsprop", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.8748166771422585, "window_acc_fold_std": 0.07611719896653119, "window_f1": 0.8750178184938605, "trial_acc": 0.8862275449101796, "trial_acc_fold_std": 0.0733251332121144, "trial_f1": 0.8868065545819589, "minutes": 2.2629480640093487}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9058 | trial acc 0.9412 | epochs 25 | 31s
+  fold 1: window acc 0.9673 | trial acc 0.9722 | epochs 25 | 56s
+  fold 2: window acc 0.9394 | trial acc 0.9394 | epochs 25 | 83s
+  fold 3: window acc 0.9814 | trial acc 1.0000 | epochs 25 | 108s
+  fold 4: window acc 0.8985 | trial acc 0.9091 | epochs 25 | 135s
+{"name": "D_opt_adam", "mods": ["IMU"], "encoder": "resnet", "opt": "adam", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.9382987638801592, "window_acc_fold_std": 0.03270254902651091, "window_f1": 0.9385231288896035, "trial_acc": 0.9520958083832335, "trial_acc_fold_std": 0.031078868581781903, "trial_f1": 0.9523336643495531, "minutes": 2.2540647824605307}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9422 | trial acc 0.9412 | epochs 25 | 29s
+  fold 1: window acc 0.9552 | trial acc 0.9444 | epochs 25 | 57s
+  fold 2: window acc 0.9250 | trial acc 0.9394 | epochs 25 | 84s
+  fold 3: window acc 0.9944 | trial acc 1.0000 | epochs 25 | 110s
+  fold 4: window acc 0.8161 | trial acc 0.8182 | epochs 25 | 137s
+{"name": "D_opt_adamw", "mods": ["IMU"], "encoder": "resnet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.9264613450659962, "window_acc_fold_std": 0.059790511265615014, "window_f1": 0.9263962031781964, "trial_acc": 0.9281437125748503, "trial_acc_fold_std": 0.05969229481241266, "trial_f1": 0.9278891830148313, "minutes": 2.28756240606308}
+STAGE1_DONE
+run_experiments.sh: line 37: unexpected EOF while looking for matching `"'
+### C. Generative pre-training (resnet_dilated) + 4-modality fusion
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    AE[IMU] pre-train loss 0.8305
+    AE[FP] pre-train loss 0.1531
+    AE[EMG] pre-train loss 0.2280
+  fold 0: window acc 0.9862 | trial acc 1.0000 | epochs 23 | 113s
+    AE[IMU] pre-train loss 0.6475
+    AE[FP] pre-train loss 0.1319
+    AE[EMG] pre-train loss 0.2380
+  fold 1: window acc 0.9952 | trial acc 1.0000 | epochs 22 | 223s
+    AE[IMU] pre-train loss 0.8074
+    AE[FP] pre-train loss 0.1189
+    AE[EMG] pre-train loss 0.2279
+  fold 2: window acc 1.0000 | trial acc 1.0000 | epochs 30 | 358s
+    AE[IMU] pre-train loss 0.7032
+    AE[FP] pre-train loss 0.1188
+    AE[EMG] pre-train loss 0.2371
+  fold 3: window acc 0.8462 | trial acc 0.8750 | epochs 12 | 446s
+    AE[IMU] pre-train loss 0.6665
+    AE[FP] pre-train loss 0.1373
+    AE[EMG] pre-train loss 0.2281
+  fold 4: window acc 0.9972 | trial acc 1.0000 | epochs 28 | 579s
+{"name": "C_resnet_dilated_ae", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "ae", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2016003, "window_acc": 0.9646693986044966, "window_acc_fold_std": 0.05953818136679299, "window_f1": 0.9643794558454107, "trial_acc": 0.9748427672955975, "trial_acc_fold_std": 0.049999999999999996, "trial_f1": 0.9745975736801425, "minutes": 9.64221355120341}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    DAE[IMU] pre-train loss 0.8484
+    DAE[FP] pre-train loss 0.1620
+    DAE[EMG] pre-train loss 0.2468
+  fold 0: window acc 0.9956 | trial acc 1.0000 | epochs 40 | 155s
+    DAE[IMU] pre-train loss 0.6414
+    DAE[FP] pre-train loss 0.1585
+    DAE[EMG] pre-train loss 0.2560
+  fold 1: window acc 0.9648 | trial acc 1.0000 | epochs 18 | 258s
+    DAE[IMU] pre-train loss 0.6867
+    DAE[FP] pre-train loss 0.1156
+    DAE[EMG] pre-train loss 0.2396
+  fold 2: window acc 0.9830 | trial acc 1.0000 | epochs 25 | 382s
+    DAE[IMU] pre-train loss 0.6374
+    DAE[FP] pre-train loss 0.1130
+    DAE[EMG] pre-train loss 0.2606
+  fold 3: window acc 0.9423 | trial acc 0.9375 | epochs 19 | 492s
+    DAE[IMU] pre-train loss 0.6700
+    DAE[FP] pre-train loss 0.1367
+    DAE[EMG] pre-train loss 0.2443
+  fold 4: window acc 0.9909 | trial acc 1.0000 | epochs 40 | 656s
+{"name": "C_resnet_dilated_dae", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "dae", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2016003, "window_acc": 0.9750802968213534, "window_acc_fold_std": 0.019546575366630518, "window_f1": 0.9752168261262989, "trial_acc": 0.9874213836477987, "trial_acc_fold_std": 0.024999999999999998, "trial_f1": 0.9876543209876543, "minutes": 10.937295774618784}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    SAE[IMU] pre-train loss 0.8283
+    SAE[FP] pre-train loss 0.1547
+    SAE[EMG] pre-train loss 0.2258
+  fold 0: window acc 0.9773 | trial acc 0.9688 | epochs 19 | 108s
+    SAE[IMU] pre-train loss 0.5831
+    SAE[FP] pre-train loss 0.1362
+    SAE[EMG] pre-train loss 0.2317
+  fold 1: window acc 0.9904 | trial acc 1.0000 | epochs 28 | 233s
+    SAE[IMU] pre-train loss 0.5847
+    SAE[FP] pre-train loss 0.1184
+    SAE[EMG] pre-train loss 0.2242
+  fold 2: window acc 0.9665 | trial acc 0.9677 | epochs 13 | 326s
+    SAE[IMU] pre-train loss 0.6275
+    SAE[FP] pre-train loss 0.1232
+    SAE[EMG] pre-train loss 0.2319
+  fold 3: window acc 0.8704 | trial acc 0.8750 | epochs 17 | 425s
+    SAE[IMU] pre-train loss 0.6595
+    SAE[FP] pre-train loss 0.1408
+    SAE[EMG] pre-train loss 0.2226
+  fold 4: window acc 0.9892 | trial acc 1.0000 | epochs 29 | 562s
+{"name": "C_resnet_dilated_sae", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "sae", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2016003, "window_acc": 0.9586886698416215, "window_acc_fold_std": 0.04503568034211295, "window_f1": 0.9584327372713123, "trial_acc": 0.9622641509433962, "trial_acc_fold_std": 0.04590225952783443, "trial_f1": 0.9620711093188158, "minutes": 9.370856575171153}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    VAE[IMU] pre-train loss 0.8589
+    VAE[FP] pre-train loss 0.1395
+    VAE[EMG] pre-train loss 0.2372
+  fold 0: window acc 0.9989 | trial acc 1.0000 | epochs 31 | 134s
+    VAE[IMU] pre-train loss 0.8229
+    VAE[FP] pre-train loss 0.1466
+    VAE[EMG] pre-train loss 0.2355
+  fold 1: window acc 0.9472 | trial acc 0.9394 | epochs 12 | 223s
+    VAE[IMU] pre-train loss 0.8206
+    VAE[FP] pre-train loss 0.1526
+    VAE[EMG] pre-train loss 0.2334
+  fold 2: window acc 0.9676 | trial acc 0.9677 | epochs 26 | 351s
+    VAE[IMU] pre-train loss 0.8429
+    VAE[FP] pre-train loss 0.1441
+    VAE[EMG] pre-train loss 0.2441
+  fold 3: window acc 0.8962 | trial acc 0.9375 | epochs 26 | 481s
+    VAE[IMU] pre-train loss 0.8427
+    VAE[FP] pre-train loss 0.1416
+    VAE[EMG] pre-train loss 0.2461
+  fold 4: window acc 0.9881 | trial acc 1.0000 | epochs 25 | 602s
+{"name": "C_resnet_dilated_vae", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "vae", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2016003, "window_acc": 0.9592424410233692, "window_acc_fold_std": 0.03631009772059672, "window_f1": 0.9593448093763873, "trial_acc": 0.9685534591194969, "trial_acc_fold_std": 0.027540243403120283, "trial_f1": 0.9685420986422105, "minutes": 10.033233161767324}
+158 trials, 56 subjects, mods=['IMU', 'FP', 'EMG', 'EEG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12, 'EEG': 18}
+  fold 0: window acc 0.9977 | trial acc 1.0000 | epochs 18 | 63s
+  fold 1: window acc 0.9745 | trial acc 0.9697 | epochs 20 | 132s
+  fold 2: window acc 0.9948 | trial acc 1.0000 | epochs 35 | 254s
+  fold 3: window acc 0.9228 | trial acc 0.9355 | epochs 17 | 317s
+  fold 4: window acc 0.9971 | trial acc 1.0000 | epochs 20 | 389s
+{"name": "C_resnet_dilated_4mod", "mods": ["IMU", "FP", "EMG", "EEG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": false, "win": 4.0, "params": 2523523, "window_acc": 0.9774529798323136, "window_acc_fold_std": 0.0286142348386198, "window_f1": 0.9773088967678177, "trial_acc": 0.9810126582278481, "trial_acc_fold_std": 0.025622138690761895, "trial_f1": 0.9809294349652747, "minutes": 6.485085213184357}
+### G. Conditional-GAN data augmentation
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    GAN epoch 10: D loss 0.445 | G loss 4.867
+    GAN epoch 20: D loss 0.658 | G loss 4.228
+    GAN epoch 30: D loss 0.687 | G loss 4.005
+    GAN epoch 40: D loss 0.805 | G loss 3.489
+    GAN epoch 50: D loss 0.780 | G loss 3.040
+    GAN epoch 60: D loss 0.768 | G loss 2.549
+  fold 0: window acc 0.9994 | trial acc 1.0000 | epochs 23 | 285s
+    GAN epoch 10: D loss 0.551 | G loss 4.130
+    GAN epoch 20: D loss 0.601 | G loss 4.388
+    GAN epoch 30: D loss 0.654 | G loss 3.956
+    GAN epoch 40: D loss 0.747 | G loss 3.564
+    GAN epoch 50: D loss 0.682 | G loss 3.013
+    GAN epoch 60: D loss 0.727 | G loss 2.784
+  fold 1: window acc 0.9776 | trial acc 0.9697 | epochs 37 | 613s
+    GAN epoch 10: D loss 0.638 | G loss 4.272
+    GAN epoch 20: D loss 0.794 | G loss 4.272
+    GAN epoch 30: D loss 0.778 | G loss 3.386
+    GAN epoch 40: D loss 0.685 | G loss 2.825
+    GAN epoch 50: D loss 0.737 | G loss 2.845
+    GAN epoch 60: D loss 0.808 | G loss 2.382
+  fold 2: window acc 1.0000 | trial acc 1.0000 | epochs 40 | 966s
+    GAN epoch 10: D loss 0.523 | G loss 4.715
+    GAN epoch 20: D loss 0.579 | G loss 4.242
+    GAN epoch 30: D loss 0.955 | G loss 4.237
+    GAN epoch 40: D loss 0.853 | G loss 3.615
+    GAN epoch 50: D loss 0.751 | G loss 3.037
+    GAN epoch 60: D loss 0.790 | G loss 2.725
+  fold 3: window acc 0.9154 | trial acc 0.9062 | epochs 17 | 1236s
+    GAN epoch 10: D loss 0.493 | G loss 4.605
+    GAN epoch 20: D loss 0.616 | G loss 4.349
+    GAN epoch 30: D loss 0.632 | G loss 3.921
+    GAN epoch 40: D loss 0.653 | G loss 3.574
+    GAN epoch 50: D loss 0.696 | G loss 2.974
+    GAN epoch 60: D loss 0.780 | G loss 2.703
+  fold 4: window acc 0.9796 | trial acc 0.9677 | epochs 40 | 1586s
+{"name": "G_resnet_dilated_ganaug", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "none", "gan_aug": 0.5, "gan_only": false, "win": 4.0, "params": 2016003, "window_acc": 0.9741942629305571, "window_acc_fold_std": 0.030975861701591292, "window_f1": 0.9740648558130651, "trial_acc": 0.9685534591194969, "trial_acc_fold_std": 0.03423824527968766, "trial_f1": 0.9683576402023003, "minutes": 26.43563952843348}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+    GAN epoch 10: D loss 0.442 | G loss 5.615
+    GAN epoch 20: D loss 0.696 | G loss 4.836
+    GAN epoch 30: D loss 0.643 | G loss 4.551
+    GAN epoch 40: D loss 0.841 | G loss 3.951
+    GAN epoch 50: D loss 0.944 | G loss 3.957
+    GAN epoch 60: D loss 0.873 | G loss 3.531
+  fold 0: window acc 0.9504 | trial acc 0.9706 | epochs 19 | 128s
+    GAN epoch 10: D loss 0.440 | G loss 5.928
+    GAN epoch 20: D loss 0.602 | G loss 4.191
+    GAN epoch 30: D loss 0.665 | G loss 4.451
+    GAN epoch 40: D loss 0.697 | G loss 3.441
+    GAN epoch 50: D loss 0.823 | G loss 3.009
+    GAN epoch 60: D loss 0.853 | G loss 2.740
+  fold 1: window acc 0.9386 | trial acc 0.9444 | epochs 14 | 247s
+    GAN epoch 10: D loss 0.457 | G loss 5.901
+    GAN epoch 20: D loss 0.621 | G loss 4.580
+    GAN epoch 30: D loss 0.735 | G loss 4.668
+    GAN epoch 40: D loss 0.586 | G loss 4.019
+    GAN epoch 50: D loss 0.678 | G loss 3.643
+    GAN epoch 60: D loss 0.631 | G loss 3.256
+  fold 2: window acc 0.9032 | trial acc 0.9091 | epochs 20 | 375s
+    GAN epoch 10: D loss 0.544 | G loss 5.649
+    GAN epoch 20: D loss 0.621 | G loss 4.993
+    GAN epoch 30: D loss 0.613 | G loss 3.648
+    GAN epoch 40: D loss 0.713 | G loss 3.702
+    GAN epoch 50: D loss 0.862 | G loss 3.024
+    GAN epoch 60: D loss 0.855 | G loss 2.833
+  fold 3: window acc 0.9303 | trial acc 0.9355 | epochs 14 | 499s
+    GAN epoch 10: D loss 0.461 | G loss 5.470
+    GAN epoch 20: D loss 0.585 | G loss 5.624
+    GAN epoch 30: D loss 0.674 | G loss 4.241
+    GAN epoch 40: D loss 0.617 | G loss 4.267
+    GAN epoch 50: D loss 0.793 | G loss 3.110
+    GAN epoch 60: D loss 0.877 | G loss 2.769
+  fold 4: window acc 0.8591 | trial acc 0.8788 | epochs 17 | 624s
+{"name": "G_IMU_resnet_ganaug", "mods": ["IMU"], "encoder": "resnet", "opt": "adamw", "pretrain": "none", "gan_aug": 0.5, "gan_only": false, "win": 4.0, "params": 624643, "window_acc": 0.9168238005447308, "window_acc_fold_std": 0.032533882884427386, "window_f1": 0.9166496694289742, "trial_acc": 0.9281437125748503, "trial_acc_fold_std": 0.031365769458978156, "trial_f1": 0.9280888030888029, "minutes": 10.398513015111288}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    GAN epoch 10: D loss 0.544 | G loss 5.033
+    GAN epoch 20: D loss 0.549 | G loss 4.133
+    GAN epoch 30: D loss 0.641 | G loss 3.878
+    GAN epoch 40: D loss 0.638 | G loss 3.786
+    GAN epoch 50: D loss 0.749 | G loss 3.441
+    GAN epoch 60: D loss 0.706 | G loss 3.144
+  fold 0: window acc 0.6185 | trial acc 0.6562 | epochs 14 | 252s
+    GAN epoch 10: D loss 0.520 | G loss 4.560
+    GAN epoch 20: D loss 0.737 | G loss 3.894
+    GAN epoch 30: D loss 0.634 | G loss 3.626
+    GAN epoch 40: D loss 0.789 | G loss 3.422
+    GAN epoch 50: D loss 0.757 | G loss 3.427
+    GAN epoch 60: D loss 0.765 | G loss 2.658
+  fold 1: window acc 0.5666 | trial acc 0.5758 | epochs 17 | 505s
+    GAN epoch 10: D loss 0.579 | G loss 5.225
+    GAN epoch 20: D loss 0.646 | G loss 3.849
+    GAN epoch 30: D loss 0.749 | G loss 3.942
+    GAN epoch 40: D loss 0.729 | G loss 3.140
+    GAN epoch 50: D loss 0.761 | G loss 2.958
+    GAN epoch 60: D loss 0.820 | G loss 2.778
+  fold 2: window acc 0.3636 | trial acc 0.3548 | epochs 23 | 787s
+    GAN epoch 10: D loss 0.499 | G loss 5.093
+    GAN epoch 20: D loss 0.722 | G loss 4.514
+    GAN epoch 30: D loss 0.694 | G loss 3.487
+    GAN epoch 40: D loss 0.789 | G loss 3.183
+    GAN epoch 50: D loss 0.761 | G loss 3.438
+    GAN epoch 60: D loss 0.751 | G loss 2.917
+  fold 3: window acc 0.4679 | trial acc 0.4375 | epochs 21 | 1063s
+    GAN epoch 10: D loss 0.498 | G loss 4.666
+    GAN epoch 20: D loss 0.656 | G loss 4.231
+    GAN epoch 30: D loss 0.655 | G loss 3.503
+    GAN epoch 40: D loss 0.711 | G loss 3.502
+    GAN epoch 50: D loss 0.684 | G loss 3.139
+    GAN epoch 60: D loss 0.763 | G loss 3.001
+  fold 4: window acc 0.4371 | trial acc 0.4194 | epochs 22 | 1342s
+{"name": "G_resnet_dilated_TSTR", "mods": ["IMU", "FP", "EMG"], "encoder": "resnet_dilated", "opt": "adamw", "pretrain": "none", "gan_aug": 0.0, "gan_only": true, "win": 4.0, "params": 2016003, "window_acc": 0.4921918263373574, "window_acc_fold_std": 0.09124799447974945, "window_f1": 0.4676031591331176, "trial_acc": 0.49056603773584906, "trial_acc_fold_std": 0.11045456291870319, "trial_f1": 0.4659854965953388, "minutes": 22.374525646368664}
+STAGE2_DONE
