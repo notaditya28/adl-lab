@@ -1,0 +1,13 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+# dataset (6.5 GB download + 13 GB extracted) – fetch with download.sh
+data/
+
+# large / in-progress training outputs
+results/
+results_*/preds/
+*.npz
+*.npy
