@@ -1,0 +1,187 @@
+### A. Single-modality baselines (ResNet-DS-CNN)
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9299 | trial acc 0.9706 | epochs 40 | 35s
+  fold 1: window acc 0.8957 | trial acc 0.8889 | epochs 16 | 49s
+  fold 2: window acc 0.9362 | trial acc 0.9394 | epochs 26 | 72s
+  fold 3: window acc 0.9679 | trial acc 1.0000 | epochs 14 | 85s
+  fold 4: window acc 0.8336 | trial acc 0.8485 | epochs 14 | 97s
+{"name": "A_IMU_cnn", "mods": ["IMU"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 243555, "window_acc": 0.9119002723653886, "window_acc_fold_std": 0.04570563401329826, "window_f1": 0.9119439615957802, "trial_acc": 0.9281437125748503, "trial_acc_fold_std": 0.05471580408757767, "trial_f1": 0.9280269811243262, "minutes": 1.6231068094571433}
+173 trials, 59 subjects, mods=['FP'], channels={'FP': 16}
+  fold 0: window acc 0.9420 | trial acc 0.9444 | epochs 19 | 18s
+  fold 1: window acc 0.9286 | trial acc 0.9444 | epochs 20 | 36s
+  fold 2: window acc 0.8793 | trial acc 0.8788 | epochs 27 | 59s
+  fold 3: window acc 0.9789 | trial acc 0.9714 | epochs 27 | 84s
+  fold 4: window acc 0.9324 | trial acc 0.9394 | epochs 30 | 112s
+{"name": "A_FP_cnn", "mods": ["FP"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 159331, "window_acc": 0.9329193811074918, "window_acc_fold_std": 0.031894163527160665, "window_f1": 0.9325468282410423, "trial_acc": 0.9364161849710982, "trial_acc_fold_std": 0.03060096783637943, "trial_f1": 0.9360808004875801, "minutes": 1.8703129887580872}
+169 trials, 58 subjects, mods=['EMG'], channels={'EMG': 12}
+  fold 0: window acc 0.6834 | trial acc 0.7222 | epochs 34 | 25s
+  fold 1: window acc 0.6848 | trial acc 0.6765 | epochs 25 | 43s
+  fold 2: window acc 0.7632 | trial acc 0.7941 | epochs 25 | 60s
+  fold 3: window acc 0.7632 | trial acc 0.8125 | epochs 36 | 89s
+  fold 4: window acc 0.6962 | trial acc 0.7273 | epochs 26 | 111s
+{"name": "A_EMG_cnn", "mods": ["EMG"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 157539, "window_acc": 0.717276401699658, "window_acc_fold_std": 0.03702468467351354, "window_f1": 0.7169859026434331, "trial_acc": 0.7455621301775148, "trial_acc_fold_std": 0.04997330477353616, "trial_f1": 0.7449156805051237, "minutes": 1.8462423404057822}
+176 trials, 59 subjects, mods=['EEG'], channels={'EEG': 18}
+  fold 0: window acc 0.6359 | trial acc 0.6389 | epochs 22 | 22s
+  fold 1: window acc 0.6468 | trial acc 0.7222 | epochs 24 | 46s
+  fold 2: window acc 0.6553 | trial acc 0.7222 | epochs 21 | 67s
+  fold 3: window acc 0.6056 | trial acc 0.6571 | epochs 30 | 97s
+  fold 4: window acc 0.7451 | trial acc 0.8182 | epochs 29 | 128s
+{"name": "A_EEG_cnn", "mods": ["EEG"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 160227, "window_acc": 0.6565543831168831, "window_acc_fold_std": 0.04681028147422176, "window_f1": 0.6528883437986482, "trial_acc": 0.7102272727272727, "trial_acc_fold_std": 0.06298848572384562, "trial_f1": 0.7077678190354245, "minutes": 2.1345142245292665}
+### B. Architecture comparison on IMU+FP+EMG fusion
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9059 | trial acc 0.9062 | epochs 40 | 35s
+  fold 1: window acc 0.8753 | trial acc 0.8485 | epochs 40 | 68s
+  fold 2: window acc 0.8619 | trial acc 0.8710 | epochs 38 | 104s
+  fold 3: window acc 0.6529 | trial acc 0.6562 | epochs 40 | 142s
+  fold 4: window acc 0.9270 | trial acc 0.9677 | epochs 24 | 164s
+{"name": "B_fusion3_mlp", "mods": ["IMU", "FP", "EMG"], "encoder": "mlp", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 4583171, "window_acc": 0.8440580352198471, "window_acc_fold_std": 0.09849995976643125, "window_f1": 0.8416747351698968, "trial_acc": 0.8490566037735849, "trial_acc_fold_std": 0.10488871397303937, "trial_f1": 0.8466868228772991, "minutes": 2.729209824403127}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9546 | trial acc 0.9375 | epochs 15 | 41s
+  fold 1: window acc 0.9744 | trial acc 0.9697 | epochs 25 | 106s
+  fold 2: window acc 0.9960 | trial acc 1.0000 | epochs 13 | 139s
+  fold 3: window acc 0.9401 | trial acc 0.9375 | epochs 15 | 183s
+  fold 4: window acc 0.9547 | trial acc 0.9677 | epochs 22 | 245s
+{"name": "B_fusion3_cnn", "mods": ["IMU", "FP", "EMG"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 791075, "window_acc": 0.9638941189500498, "window_acc_fold_std": 0.019380372542371942, "window_f1": 0.9632874221701148, "trial_acc": 0.9622641509433962, "trial_acc_fold_std": 0.02339026940383877, "trial_f1": 0.9616192630898514, "minutes": 4.080404623349508}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9790 | trial acc 1.0000 | epochs 17 | 32s
+  fold 1: window acc 0.9270 | trial acc 0.9394 | epochs 13 | 51s
+  fold 2: window acc 0.9273 | trial acc 0.9355 | epochs 39 | 107s
+  fold 3: window acc 0.8292 | trial acc 0.8125 | epochs 15 | 131s
+  fold 4: window acc 0.9196 | trial acc 0.9032 | epochs 38 | 194s
+{"name": "B_fusion3_gru", "mods": ["IMU", "FP", "EMG"], "encoder": "gru", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 1417798, "window_acc": 0.9162697973197474, "window_acc_fold_std": 0.04848728758870122, "window_f1": 0.9161791883997256, "trial_acc": 0.9182389937106918, "trial_acc_fold_std": 0.06137726013950434, "trial_f1": 0.9179791789854682, "minutes": 3.227046716213226}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9635 | trial acc 0.9688 | epochs 31 | 50s
+  fold 1: window acc 0.9638 | trial acc 0.9697 | epochs 21 | 83s
+  fold 2: window acc 0.9699 | trial acc 0.9677 | epochs 24 | 122s
+  fold 3: window acc 0.9550 | trial acc 0.9688 | epochs 23 | 156s
+  fold 4: window acc 0.9428 | trial acc 0.9677 | epochs 24 | 199s
+{"name": "B_fusion3_lstm", "mods": ["IMU", "FP", "EMG"], "encoder": "lstm", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 1696582, "window_acc": 0.9590209325506701, "window_acc_fold_std": 0.009373895609367978, "window_f1": 0.9593899148363602, "trial_acc": 0.9685534591194969, "trial_acc_fold_std": 0.0007349176018423995, "trial_f1": 0.9688417510454229, "minutes": 3.3165394107500714}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+  fold 0: window acc 0.9668 | trial acc 0.9688 | epochs 33 | 92s
+  fold 1: window acc 0.9622 | trial acc 0.9697 | epochs 21 | 142s
+  fold 2: window acc 0.9585 | trial acc 0.9677 | epochs 32 | 226s
+  fold 3: window acc 0.9753 | trial acc 1.0000 | epochs 27 | 301s
+  fold 4: window acc 0.9745 | trial acc 0.9677 | epochs 16 | 344s
+{"name": "B_fusion3_transformer", "mods": ["IMU", "FP", "EMG"], "encoder": "transformer", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 2972291, "window_acc": 0.9674382545132352, "window_acc_fold_std": 0.006627316153898974, "window_f1": 0.9673142222802665, "trial_acc": 0.9748427672955975, "trial_acc_fold_std": 0.012627866099215596, "trial_f1": 0.9747086247086246, "minutes": 5.731976819038391}
+### C. All four modalities + denoising-autoencoder pre-training
+158 trials, 56 subjects, mods=['IMU', 'FP', 'EMG', 'EEG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12, 'EEG': 18}
+  fold 0: window acc 0.9752 | trial acc 1.0000 | epochs 14 | 45s
+  fold 1: window acc 0.9502 | trial acc 0.9394 | epochs 32 | 151s
+  fold 2: window acc 1.0000 | trial acc 1.0000 | epochs 25 | 240s
+  fold 3: window acc 0.8692 | trial acc 0.8710 | epochs 24 | 317s
+  fold 4: window acc 0.9649 | trial acc 0.9677 | epochs 16 | 375s
+{"name": "C_fusion4_cnn", "mods": ["IMU", "FP", "EMG", "EEG"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 934147, "window_acc": 0.9519601178336733, "window_acc_fold_std": 0.044411910835780284, "window_f1": 0.9519941282152193, "trial_acc": 0.9556962025316456, "trial_acc_fold_std": 0.047990415617020554, "trial_f1": 0.9560277424095848, "minutes": 6.2430244326591495}
+159 trials, 56 subjects, mods=['IMU', 'FP', 'EMG'], channels={'IMU': 204, 'FP': 16, 'EMG': 12}
+    DAE[IMU] recon MSE 0.3122
+    DAE[FP] recon MSE 0.0411
+    DAE[EMG] recon MSE 0.1224
+  fold 0: window acc 0.9961 | trial acc 1.0000 | epochs 33 | 147s
+    DAE[IMU] recon MSE 0.3100
+    DAE[FP] recon MSE 0.0410
+    DAE[EMG] recon MSE 0.1217
+  fold 1: window acc 0.9915 | trial acc 1.0000 | epochs 39 | 309s
+    DAE[IMU] recon MSE 0.3001
+    DAE[FP] recon MSE 0.0397
+    DAE[EMG] recon MSE 0.1174
+  fold 2: window acc 0.9744 | trial acc 0.9677 | epochs 22 | 425s
+    DAE[IMU] recon MSE 0.2980
+    DAE[FP] recon MSE 0.0406
+    DAE[EMG] recon MSE 0.1214
+  fold 3: window acc 0.9083 | trial acc 0.9062 | epochs 23 | 552s
+    DAE[IMU] recon MSE 0.3008
+    DAE[FP] recon MSE 0.0374
+    DAE[EMG] recon MSE 0.1208
+  fold 4: window acc 1.0000 | trial acc 1.0000 | epochs 19 | 662s
+{"name": "C_fusion3_cnn_dae", "mods": ["IMU", "FP", "EMG"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 15, "win": 4.0, "params": 791075, "window_acc": 0.973972754457858, "window_acc_fold_std": 0.03402470903593844, "window_f1": 0.9740046985092107, "trial_acc": 0.9748427672955975, "trial_acc_fold_std": 0.03648023783285014, "trial_f1": 0.9748382877313695, "minutes": 11.029376216729482}
+### D. Optimizer ablation (IMU, CNN, 25 epochs)
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9806 | trial acc 1.0000 | epochs 25 | 28s
+  fold 1: window acc 0.8855 | trial acc 0.8611 | epochs 25 | 53s
+  fold 2: window acc 0.8650 | trial acc 0.8788 | epochs 25 | 80s
+  fold 3: window acc 0.9781 | trial acc 0.9677 | epochs 25 | 106s
+  fold 4: window acc 0.8315 | trial acc 0.8485 | epochs 25 | 132s
+{"name": "D_opt_sgd", "mods": ["IMU"], "encoder": "cnn", "opt": "sgd", "dae_epochs": 0, "win": 4.0, "params": 243555, "window_acc": 0.9075005237795936, "window_acc_fold_std": 0.06064428955782708, "window_f1": 0.9079177935761723, "trial_acc": 0.9101796407185628, "trial_acc_fold_std": 0.06095089814860839, "trial_f1": 0.9104901511681174, "minutes": 2.1983390847841897}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9268 | trial acc 0.9412 | epochs 25 | 28s
+  fold 1: window acc 0.8884 | trial acc 0.9167 | epochs 25 | 53s
+  fold 2: window acc 0.9128 | trial acc 0.9394 | epochs 25 | 79s
+  fold 3: window acc 0.9353 | trial acc 0.9355 | epochs 25 | 105s
+  fold 4: window acc 0.8224 | trial acc 0.8182 | epochs 25 | 132s
+{"name": "D_opt_momentum", "mods": ["IMU"], "encoder": "cnn", "opt": "momentum", "dae_epochs": 0, "win": 4.0, "params": 243555, "window_acc": 0.896815420071234, "window_acc_fold_std": 0.040598781500613274, "window_f1": 0.8965415032154843, "trial_acc": 0.9101796407185628, "trial_acc_fold_std": 0.046819362726457474, "trial_f1": 0.9100462123156475, "minutes": 2.1920716087023417}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.9263 | trial acc 0.9412 | epochs 25 | 27s
+  fold 1: window acc 0.8913 | trial acc 0.9167 | epochs 25 | 53s
+  fold 2: window acc 0.9144 | trial acc 0.9394 | epochs 25 | 78s
+  fold 3: window acc 0.9359 | trial acc 0.9355 | epochs 25 | 106s
+  fold 4: window acc 0.8246 | trial acc 0.8485 | epochs 25 | 132s
+{"name": "D_opt_nesterov", "mods": ["IMU"], "encoder": "cnn", "opt": "nesterov", "dae_epochs": 0, "win": 4.0, "params": 243555, "window_acc": 0.8981772470144563, "window_acc_fold_std": 0.03985483045792474, "window_f1": 0.8979215524800289, "trial_acc": 0.9161676646706587, "trial_acc_fold_std": 0.034983429332316365, "trial_f1": 0.9160021265284423, "minutes": 2.195215944449107}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\adl lab project final\src\train.py", line 291, in <module>
+    run(parse())
+    ~~~^^^^^^^^^
+  File "C:\Users\LENOVO\Downloads\adl lab project final\src\train.py", line 227, in run
+    pt, (tw, _), n_ep, n_par = train_fold(args, keys, data, y, dur, train_t, val_t, test_t,
+                               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                          args.seed + f)
+                                          ^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\Downloads\adl lab project final\src\train.py", line 174, in train_fold
+    sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=args.lr, total_steps=steps,
+                                                pct_start=0.15, anneal_strategy="cos")
+  File "C:\Users\LENOVO\Downloads\adl lab project final\.venv\Lib\site-packages\torch\optim\lr_scheduler.py", line 2499, in __init__
+    raise ValueError(
+        "optimizer must support momentum or beta1 with `cycle_momentum` option enabled"
+    )
+ValueError: optimizer must support momentum or beta1 with `cycle_momentum` option enabled
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.8741 | trial acc 0.9118 | epochs 25 | 28s
+  fold 1: window acc 0.9308 | trial acc 0.9444 | epochs 25 | 51s
+  fold 2: window acc 0.8942 | trial acc 0.9091 | epochs 25 | 78s
+  fold 3: window acc 0.9831 | trial acc 1.0000 | epochs 25 | 105s
+  fold 4: window acc 0.8921 | trial acc 0.9091 | epochs 25 | 132s
+{"name": "D_opt_rmsprop", "mods": ["IMU"], "encoder": "cnn", "opt": "rmsprop", "dae_epochs": 0, "win": 4.0, "params": 243555, "window_acc": 0.9141001466582862, "window_acc_fold_std": 0.03878423529783528, "window_f1": 0.9132637098722544, "trial_acc": 0.9341317365269461, "trial_acc_fold_std": 0.035203875420746905, "trial_f1": 0.933119658119658, "minutes": 2.194780945777893}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.8895 | trial acc 0.9118 | epochs 25 | 27s
+  fold 1: window acc 0.9016 | trial acc 0.9444 | epochs 25 | 53s
+  fold 2: window acc 0.9389 | trial acc 0.9394 | epochs 25 | 80s
+  fold 3: window acc 0.9578 | trial acc 0.9677 | epochs 25 | 107s
+  fold 4: window acc 0.8820 | trial acc 0.8788 | epochs 25 | 134s
+{"name": "D_opt_adam", "mods": ["IMU"], "encoder": "cnn", "opt": "adam", "dae_epochs": 0, "win": 4.0, "params": 243555, "window_acc": 0.9130525874711921, "window_acc_fold_std": 0.029396055027753325, "window_f1": 0.9128917064129615, "trial_acc": 0.9281437125748503, "trial_acc_fold_std": 0.030542334021479538, "trial_f1": 0.9281585933759846, "minutes": 2.2272331635157268}
+167 trials, 57 subjects, mods=['IMU'], channels={'IMU': 204}
+  fold 0: window acc 0.8884 | trial acc 0.9118 | epochs 25 | 26s
+  fold 1: window acc 0.8587 | trial acc 0.8611 | epochs 25 | 53s
+  fold 2: window acc 0.9208 | trial acc 0.9394 | epochs 25 | 79s
+  fold 3: window acc 0.9651 | trial acc 0.9677 | epochs 25 | 106s
+  fold 4: window acc 0.8224 | trial acc 0.8182 | epochs 25 | 132s
+{"name": "D_opt_adamw", "mods": ["IMU"], "encoder": "cnn", "opt": "adamw", "dae_epochs": 0, "win": 4.0, "params": 243555, "window_acc": 0.8896920175989943, "window_acc_fold_std": 0.0492647441522109, "window_f1": 0.8898730797574785, "trial_acc": 0.8982035928143712, "trial_acc_fold_std": 0.05382409955109759, "trial_f1": 0.8984443025483254, "minutes": 2.205440815289815}
+### E. Report + ensemble
+## All runs (5-fold subject-independent CV)
+
+| Run | Modalities | Encoder | Optimizer | Params | Window acc | Window F1 | Trial acc |
+|---|---|---|---|---|---|---|---|
+| C_fusion3_cnn_dae | IMU+FP+EMG | cnn | adamw | 0.79M | 97.40 ± 3.40 | 97.40 | 97.48 |
+| B_fusion3_transformer | IMU+FP+EMG | transformer | adamw | 2.97M | 96.74 ± 0.66 | 96.73 | 97.48 |
+| B_fusion3_cnn | IMU+FP+EMG | cnn | adamw | 0.79M | 96.39 ± 1.94 | 96.33 | 96.23 |
+| B_fusion3_lstm | IMU+FP+EMG | lstm | adamw | 1.70M | 95.90 ± 0.94 | 95.94 | 96.86 |
+| C_fusion4_cnn | IMU+FP+EMG+EEG | cnn | adamw | 0.93M | 95.20 ± 4.44 | 95.20 | 95.57 |
+| A_FP_cnn | FP | cnn | adamw | 0.16M | 93.29 ± 3.19 | 93.25 | 93.64 |
+| B_fusion3_gru | IMU+FP+EMG | gru | adamw | 1.42M | 91.63 ± 4.85 | 91.62 | 91.82 |
+| D_opt_rmsprop | IMU | cnn | rmsprop | 0.24M | 91.41 ± 3.88 | 91.33 | 93.41 |
+| D_opt_adam | IMU | cnn | adam | 0.24M | 91.31 ± 2.94 | 91.29 | 92.81 |
+| A_IMU_cnn | IMU | cnn | adamw | 0.24M | 91.19 ± 4.57 | 91.19 | 92.81 |
+| D_opt_sgd | IMU | cnn | sgd | 0.24M | 90.75 ± 6.06 | 90.79 | 91.02 |
+| D_opt_nesterov | IMU | cnn | nesterov | 0.24M | 89.82 ± 3.99 | 89.79 | 91.62 |
+| D_opt_momentum | IMU | cnn | momentum | 0.24M | 89.68 ± 4.06 | 89.65 | 91.02 |
+| D_opt_adamw | IMU | cnn | adamw | 0.24M | 88.97 ± 4.93 | 88.99 | 89.82 |
+| B_fusion3_mlp | IMU+FP+EMG | mlp | adamw | 4.58M | 84.41 ± 9.85 | 84.17 | 84.91 |
+| A_EMG_cnn | EMG | cnn | adamw | 0.16M | 71.73 ± 3.70 | 71.70 | 74.56 |
+| A_EEG_cnn | EEG | cnn | adamw | 0.16M | 65.66 ± 4.68 | 65.29 | 71.02 |
+
+## Soft-voting ensemble
+
+Members: B_fusion3_cnn, B_fusion3_gru, B_fusion3_lstm, B_fusion3_transformer, C_fusion3_cnn_dae
+
+- Window accuracy: **98.59%** (macro-F1 98.60%)
+- Trial accuracy: **98.74%**
+
+ALL_DONE
